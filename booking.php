@@ -1,6 +1,12 @@
 <?php
   include 'config.php';
-  
+  session_start();
+  if($_SESSION['status'] !="login"){
+  header("location:login_p.php");}
+  $sql="select * from pelanggan where email='$_SESSION[email]'";
+  $result=mysqli_query($connect, $sql);
+  $data=mysqli_fetch_array($result);
+  $kd_pelanggan="$data[kd_pelanggan]";
 ?>
 <!DOCTYPE html>
 <html>
@@ -8,6 +14,7 @@
 
   if ($_GET['kd_booking']=='') {
     # Berikan kd_booking Otomatis
+    # Test
     $carikd_booking = mysqli_query($connect,"SELECT MAX(kd_booking) FROM booking");
     $datakd_booking = mysqli_fetch_array($carikd_booking);
 
@@ -28,7 +35,7 @@
    if ($_GET['kd_pelanggan']=='') {
     $kd_pelanggan = '';
   } else {
-    $kd_pelanggan = $_GET['kd_pelanggan'];
+    $kd_pelanggan = $kd_pelanggan;
   }
 
 ?>

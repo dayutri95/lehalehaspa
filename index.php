@@ -75,12 +75,8 @@
               <div class="icon">
                 <i class="ion ion-person"></i>
               </div>
-              <?php
-              	$kd="";
-              	$tgl="";
-              	$kd_pelanggan="";
-              ?>
-              <a href="booking.php?kd_booking=<?php echo "$kd"; ?>&tgl_booking=<?php echo"$tgl"; ?>&kd_pelanggan=<?php echo"$kd_pelanggan"; ?>" class="small-box-footer">Halaman Registrasi <i class="fa fa-arrow-circle-right"></i></a>
+              
+              <a href="login_p.php" class="small-box-footer">Halaman Registrasi <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div>
           </div>
